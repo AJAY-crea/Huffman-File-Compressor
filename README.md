@@ -68,18 +68,5 @@ Each compressed file includes:
 
 ---
 
-## ✅ Example Run
-
-```bash
-./compressor test.txt compressed.huff
-./decompressor compressed.huff restored.txt
-diff test.txt restored.txt   # No output → files are identical
-```
-
----
-
-
-
-
 
 Feel free to ⭐ star the repository if you find this project helpful!
