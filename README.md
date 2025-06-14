@@ -19,8 +19,11 @@ This is a C++ implementation of the **Huffman Encoding algorithm** for lossless 
 Use `g++` to compile the source files:
 
 ```bash
-g++ compressor.cpp huffman_decoder.cpp -o compressor
-g++ decompressor.cpp huffman_decoder.cpp -o decompressor
+g++ compressor.cpp -o compressor
+./compressor input.txt compressed.txt
+
+g++ decompressor.cpp -o decompressor.exe
+./decompressor.exe compressed.txt decompressed.txt
 ```
 
 You can also combine both compressor and decompressor functionality in one binary if desired.
