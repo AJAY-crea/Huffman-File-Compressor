@@ -1,80 +1,85 @@
 # 📦 Huffman-File-Compressor
 
-This is a C++ implementation of the **Huffman Encoding algorithm** for lossless file compression and decompression. It allows you to compress any binary file and later decompress it back to its original form with perfect accuracy.
+This project provides a **C++ implementation of the Huffman Encoding algorithm** for **lossless file compression and decompression**. It supports **any binary or text file**, efficiently reducing file sizes while preserving exact data.
 
 ---
 
 ## 🧠 Features
 
-- Full **binary-safe** encoding and decoding  
-- Custom frequency table storage for decoding  
-- Handles any file format (text, binary, etc.)  
-- Efficient memory and bitstream handling  
-- CLI-based usage with informative error messages  
+- ✅ Binary-safe compression and decompression
+- ✅ Stores custom frequency metadata for accurate decoding
+- ✅ Supports all file formats: `.txt`, `.png`, `.exe`, etc.
+- ✅ Efficient memory usage and bitstream management
+- ✅ Command-line interface with clear error handling
 
 ---
 
 ## 🛠️ Build Instructions
 
-Use `g++` to compile the source files:
+Use `g++` to compile:
 
 ```bash
+# Compile the compressor
 g++ compressor.cpp -o compressor
-./compressor input.txt compressed.txt
 
+# Compile the decompressor
 g++ decompressor.cpp -o decompressor.exe
-./decompressor.exe compressed.txt decompressed.txt
 ```
-
-You can also combine both compressor and decompressor functionality in one binary if desired.
 
 ---
 
 ## 🚀 Usage
 
-### Compress a file:
+### 🔐 Compress a file
 
 ```bash
 ./compressor input.txt compressed.txt
 ```
 
-### Decompress a file:
+### 🔓 Decompress a file
 
 ```bash
-./decompressor compressed.txt decompressed.txt
+./decompressor.exe compressed.txt decompressed.txt
 ```
 
-> ⚠️ Ensure `input.txt` exists and that `compressed.txt` is writable.
+> ⚠️ Ensure that:
+> - `input.txt` exists
+> - `compressed.txt` is writable
+> - Executables (`compressor`, `decompressor.exe`) are compiled properly
 
 ---
 
 ## 📂 File Structure
 
-| File                  | Description                              |
-|-----------------------|------------------------------------------|
-| `compressor.cpp`      | Main entry point for compression         |
-| `decompressor.cpp`    | Main entry point for decompression       |
-| `huffman_decoder.cpp` | Contains the Huffman encoding/decoding logic |
+| File                  | Purpose                                           |
+|-----------------------|---------------------------------------------------|
+| `compressor.cpp`      | Main file for compression                        |
+| `decompressor.cpp`    | Main file for decompression                      |
+| `huffman_decoder.cpp` | Core Huffman logic (shared by both executables)  |
 
 ---
 
-## 📊 Compression Format
+## 📊 Compression Format Details
 
-The compressed file stores:
-- A header with character frequency information
-- Huffman-encoded binary content
-- Padding metadata for accurate decompression
+Each compressed file includes:
+- Header with frequency data (used for reconstructing the Huffman Tree)
+- Encoded binary stream
+- Padding info (so bits align to byte boundaries)
 
 ---
 
-## ✅ Example
+## ✅ Example Run
 
 ```bash
 ./compressor test.txt compressed.huff
 ./decompressor compressed.huff restored.txt
-diff test.txt restored.txt   # Should show no output (identical)
+diff test.txt restored.txt   # No output → files are identical
 ```
 
 ---
 
 
+
+
+
+Feel free to ⭐ star the repository if you find this project helpful!
