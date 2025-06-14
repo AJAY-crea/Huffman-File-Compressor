@@ -74,16 +74,4 @@ diff test.txt restored.txt   # Should show no output (identical)
 
 ---
 
-## 📌 Future Work
 
-- GUI interface
-- Parallel encoding
-- Support for multi-file archiving
-- Bitstream optimization
-
----
-
-## 👨‍💻 Author
-
-Developed by **Ajay Veliginti**  
-📧 [ajay@iitb.ac.in](mailto:ajay@iitb.ac.in)
